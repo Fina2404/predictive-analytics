@@ -52,6 +52,7 @@ Menurut penelitian, penerapan kecerdasan buatan dalam pertanian presisi terbukti
 [Dataset](https://docs.google.com/document/d/1vywYzWEXL_UPHhR3U-r4ioeQCZEVnHpUcfQb7cq1W8I/edit?tab=t.0)
 
 ### EDA
+![Distribusi Jenis tanaman]()
 ![EDA](eda.png)
 * Distribusi nilai suhu berkisar antara 15 - 30 derajat Celsius
 * Nilai pH air dominan berada di antara 5.5 - 7.0
