@@ -52,10 +52,11 @@ Menurut penelitian, penerapan kecerdasan buatan dalam pertanian presisi terbukti
 [Dataset](https://docs.google.com/document/d/1vywYzWEXL_UPHhR3U-r4ioeQCZEVnHpUcfQb7cq1W8I/edit?tab=t.0)
 
 ### EDA
-
+![EDA](eda.png)
 * Distribusi nilai suhu berkisar antara 15 - 30 derajat Celsius
 * Nilai pH air dominan berada di antara 5.5 - 7.0
-* Intensitas cahaya bervariasi dari 12.000 - 16.000 Lux
+* Intensitas cahaya bervariasi dari 12.000 - 18.000 Lux
+* Jenis tanaman hidroponik yang digunakan seperti selada, kangkung, bayam, sawi, dan pakcoy
 
 ## Data Preparation
 
