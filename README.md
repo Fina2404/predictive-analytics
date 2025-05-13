@@ -28,19 +28,28 @@ Menurut penelitian, penerapan kecerdasan buatan dalam pertanian presisi terbukti
 
 ## Data Understanding
 
-* Jumlah data: 500 sampel
-* Fitur:
+| No | Kolom              | Jumlah Non-Null | Tipe Data | Deskripsi                                   |
+|----|--------------------|------------------|-----------|---------------------------------------------|
+| 1  | suhu               | 500              | float64   | Suhu lingkungan (dalam derajat Celsius)     |
+| 2  | ph_air             | 500              | float64   | pH larutan nutrisi hidroponik               |
+| 3  | intensitas_cahaya  | 500              | int64     | Intensitas cahaya (dalam satuan lux)        |
+| 4  | jenis_tanaman      | 500              | object    | Jenis tanaman hidroponik (target klasifikasi) |
 
-  * `suhu` (float): Suhu lingkungan
-  * `ph_air` (float): Tingkat keasaman air
-  * `intensitas_cahaya` (int): Intensitas cahaya dalam satuan Lux
-* Target:
+### Statistik Deskriptif Fitur Numerik
 
-  * `jenis_tanaman` (kategori): Jenis tanaman hidroponik (misalnya: Selada, Bayam, Kangkung)
+| Statistik | Suhu (°C) | pH Air | Intensitas Cahaya (lux) |
+|-----------|-----------|--------|--------------------------|
+| Count     | 500       | 500    | 500                      |
+| Mean      | 23.49     | 6.22   | 14,664.29                |
+| Std       | 3.33      | 0.38   | 1,384.33                 |
+| Min       | 16.06     | 5.26   | 11,167                   |
+| 25%       | 21.07     | 5.93   | 13,759.25                |
+| 50%       | 23.32     | 6.22   | 14,738.50                |
+| 75%       | 26.04     | 6.48   | 15,512.75                |
+| Max       | 31.64     | 7.18   | 18,469                   |
 
 ### Link Dataset
-
-Dataset disiapkan secara internal dan tidak diambil dari publikasi luar.
+[Dataset](https://docs.google.com/document/d/1vywYzWEXL_UPHhR3U-r4ioeQCZEVnHpUcfQb7cq1W8I/edit?tab=t.0)
 
 ### EDA
 
