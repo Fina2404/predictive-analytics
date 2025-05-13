@@ -22,7 +22,7 @@ Menurut penelitian, penerapan kecerdasan buatan dalam pertanian presisi terbukti
 2. Mengevaluasi kinerja model dengan metrik klasifikasi seperti akurasi, precision, recall, dan F1-score.
 
 ### Solution Statements
-1. Mengembangkan model klasifikasi menggunakan beberapa algoritma seperti K-Nearest Neighbors (KNN), Random Forest, dan Support Vector Machine (SVM).
+1. Mengembangkan model klasifikasi menggunakan beberapa algoritma seperti Decision Tree dan Random Forest.
 2. Melakukan hyperparameter tuning untuk meningkatkan akurasi model terbaik.
 3. Menggunakan metrik evaluasi klasifikasi untuk membandingkan performa antar model.
 
@@ -111,7 +111,3 @@ F1-score memberikan keseimbangan antara precision dan recall, cocok untuk kasus 
 ## Kesimpulan
 
 Model klasifikasi yang dibangun dapat memprediksi jenis tanaman hidroponik dengan performa yang cukup baik. Random Forest menjadi model terbaik dan dapat digunakan sebagai dasar rekomendasi dalam sistem penanaman hidroponik otomatis di masa depan.
-
----
-
-**Catatan:** Laporan ini adalah draf awal dan perlu dilengkapi dengan visualisasi, cuplikan kode pada notebook, serta hasil tuning akhir yang sesuai dengan hasil pelatihan model di `.ipynb`.
