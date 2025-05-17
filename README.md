@@ -51,7 +51,7 @@ Dataset ini merupakan data sintetis yang dibuat berdasarkan informasi dari jurna
 | Max       | 31.64     | 7.18   | 18,469                   |
 
 ### Link Dataset
-[Dataset](https://docs.google.com/document/d/1vywYzWEXL_UPHhR3U-r4ioeQCZEVnHpUcfQb7cq1W8I/edit?tab=t.0)
+[Dataset](https://docs.google.com/spreadsheets/d/1AUqeKAaF4xarwE3Zbh5aum3srejIIV5nz_2SEJ8Y0JI/edit?gid=1887223174#gid=1887223174)
 
 ## Data Preparation
 ![Distribusi Jenis tanaman](distribusi-jenis-tanaman.png)
