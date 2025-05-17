@@ -82,46 +82,87 @@ Dilihat dari statistik deskriptif dan asumsi distribusi normal:
 - Tidak ditemukan duplikat data.
 
 ### outlier
-
+![Outlier](outlier.png)
+- Data suhu dan ph_air berada dalam batas normal secara statistik. Tidak ada outlier yang perlu ditangani.
+- Pada bagian intensitas Cahaya ditemukan beberapa nilai ekstrem (>18.144 lux).
+- Maka kita akan menghapus baris yang mengandung outlier pada intensitas_cahaya dari dataset.
 
 ## Data Preparation
-* Normalisasi fitur menggunakan StandardScaler
-* Encode label target menggunakan LabelEncoder
-* Split data menjadi train dan test (80:20)
+Pada tahap Data Preparation, dilakukan serangkaian proses untuk menyiapkan data sebelum digunakan dalam pelatihan model. Tahapan ini sangat penting untuk memastikan data dalam kondisi optimal agar model machine learning dapat belajar secara efektif dan menghasilkan prediksi yang akurat. Adapun langkah-langkah yang dilakukan dalam urutan sebagai berikut:
+- Pemilahan Fitur dan Label:
+  - Fitur yang digunakan adalah suhu, ph_air, dan intensitas_cahaya, sedangkan label target adalah jenis_tanaman.
+Pemisahan ini diperlukan agar algoritma hanya mempelajari pola dari fitur dan memprediksi label.
+- Encoding Label (Label Encoding):
+  - Kolom jenis_tanaman yang berupa kategori (string) diubah menjadi format numerik menggunakan LabelEncoder.
+- Normalisasi Fitur (Standardization):
+  - Dilakukan standardisasi pada fitur numerik menggunakan StandardScaler agar memiliki distribusi dengan rata-rata 0 dan standar deviasi 1.
+- Split Data (Train-Test Split):
+  - Data dibagi menjadi 80% untuk pelatihan (X_train, y_train) dan 20% untuk pengujian (X_test, y_test) menggunakan train_test_split.
+Proses ini memastikan model dapat diuji pada data yang belum pernah dilihat untuk mengevaluasi kemampuannya secara adil.
 
 ## Modeling
 
-### Algoritma yang Digunakan
-
+Pada tahap Modeling, dua algoritma machine learning digunakan untuk menyelesaikan permasalahan klasifikasi jenis tanaman hidroponik berdasarkan parameter lingkungan: Decision Tree Classifier dan Random Forest Classifier. Tujuan dari tahap ini adalah membangun model yang mampu mempelajari hubungan antara fitur (suhu, ph_air, intensitas_cahaya) dan label (jenis_tanaman), kemudian mengevaluasi kinerjanya menggunakan data uji.
 1. Decision Tree Classifier
+- Parameter utama:
+  - max_depth=5: Membatasi kedalaman maksimum pohon keputusan untuk menghindari overfitting.
+  - random_state=42: Agar hasil pelatihan konsisten dan dapat direproduksi.
+- Kelebihan:
+  - Mudah diinterpretasikan dan divisualisasikan.
+  - Cepat dalam proses pelatihan dan prediksi.
+- Kekurangan:
+  - Rentan terhadap overfitting jika tidak dikontrol dengan baik.
+  - Sensitif terhadap variasi data — pohon bisa sangat berubah hanya karena sedikit perubahan data.
 2. Random Forest Classifier
-
-### Parameter dan Proses
-
-* Decision Tree: menggunakan max\_depth sebagai parameter tuning
-* Random Forest: tuning parameter n\_estimators dan max\_depth
-
-### Kelebihan dan Kekurangan
-
-* Decision Tree: mudah diinterpretasi, rawan overfitting
-* Random Forest: akurasi lebih tinggi, lebih kompleks dan lambat dibanding Decision Tree
-
-### Model Terbaik
-
-Random Forest dipilih sebagai model terbaik karena memiliki akurasi dan F1-score tertinggi setelah tuning.
+- Parameter utama:
+  - n_estimators=100: Menggunakan 100 pohon keputusan dalam ensemble.
+  - max_depth=10: Membatasi kedalaman pohon untuk mencegah overfitting.
+  - random_state=42: Menjamin reproducibility.
+- Kelebihan:
+  - Lebih stabil dan akurat dibandingkan Decision Tree tunggal karena menggunakan pendekatan ensemble.
+  - Mengurangi overfitting dengan menggabungkan prediksi dari banyak pohon.
+- Kekurangan:
+  - Kurang interpretatif (seperti black box).
+  - Waktu pelatihan dan prediksi sedikit lebih lama dibanding Decision Tree.
+- Pemilihan Model Terbaik
+  - Setelah dilakukan evaluasi pada kedua model menggunakan metrik seperti akurasi, precision, recall, dan F1-score, Random Forest Classifier dipilih sebagai model terbaik dengan akurasi sebesar 56%, lebih tinggi dibanding Decision Tree yang hanya mencapai 46%. Selain itu, Random Forest juga menunjukkan performa yang lebih stabil antar kelas berdasarkan confusion matrix dan classification report.
+- Alasan Pemilihan:
+  - Random Forest menunjukkan generalisasi yang lebih baik.
+  - Meskipun belum dilakukan hyperparameter tuning, hasil awalnya lebih menjanjikan dibanding Decision Tree.
+  - Distribusi performa antar kelas lebih seimbang, sehingga lebih andal untuk digunakan dalam aplikasi nyata.
+Jika ingin meningkatkan akurasi lebih lanjut, direkomendasikan untuk melakukan hyperparameter tuning (misalnya menggunakan GridSearchCV atau RandomizedSearchCV) dan mempertimbangkan model alternatif seperti K-Nearest Neighbors, SVM, atau Gradient Boosting.
 
 ## Evaluation
 
-### Metrik Evaluasi
+Pada tahap evaluasi, digunakan beberapa metrik evaluasi untuk mengukur kinerja model dalam menyelesaikan permasalahan klasifikasi multikelas jenis tanaman hidroponik. Evaluasi ini dilakukan pada dua model yang telah dibangun sebelumnya: Decision Tree Classifier dan Random Forest Classifier.
 
-* Accuracy
-* Precision
-* Recall
-* F1-Score
-
-### Penjelasan Metrik
-
-F1-score memberikan keseimbangan antara precision dan recall, cocok untuk kasus klasifikasi multikelas.
+Metrik Evaluasi yang Digunakan
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+Metrik-metrik ini dipilih karena sangat sesuai untuk kasus klasifikasi multikelas yang balanced (jumlah data antar kelas seimbang). Tidak digunakan metrik seperti ROC-AUC karena kurang relevan untuk klasifikasi multikelas tanpa konversi menjadi binary.
+Penjelasan Metrik Evaluasi
+- Accuracy:
+  - Proporsi prediksi yang benar dari total jumlah data.Cocok untuk dataset dengan distribusi kelas yang seimbang, seperti pada proyek ini.
+- Precision:
+  - Rasio antara jumlah prediksi benar positif dengan total prediksi positif. Menunjukkan seberapa “tepat” model saat memprediksi kelas tertentu.
+- Recall (Sensitivity):
+  - Rasio antara jumlah prediksi benar positif dengan total jumlah aktual positif.Menunjukkan kemampuan model dalam menangkap semua instance dari suatu kelas.
+- F1-Score:
+  - Rata-rata harmonis dari precision dan recall. Digunakan untuk menyeimbangkan precision dan recall, khususnya saat keduanya penting.
+- Confusion Matrix:
+  - Matriks yang menunjukkan jumlah prediksi benar dan salah untuk setiap kelas. Membantu mengevaluasi performa antar kelas secara visual.
+Hasil Evaluasi Model
+- Decision Tree Classifier
+  - Accuracy: 46%
+  - F1-score tiap kelas bervariasi; kelas 0 memiliki recall tinggi (0.80) tetapi precision rendah.
+  - Model cenderung overfit ke beberapa kelas dan underfit ke lainnya.
+- Random Forest Classifier
+  - Accuracy: 56%
+  - Precision, recall, dan F1-score lebih stabil antar kelas dibanding Decision Tree.
+  - Confusion matrix menunjukkan bahwa Random Forest lebih baik dalam mengklasifikasikan kelas 1 dan 2, walaupun kelas 4 masih sering salah klasifikasi.
 
 ### Hasil Evaluasi
 
@@ -133,4 +174,4 @@ F1-score memberikan keseimbangan antara precision dan recall, cocok untuk kasus 
 
 ## Kesimpulan
 
-Model klasifikasi yang dibangun dapat memprediksi jenis tanaman hidroponik dengan performa yang cukup baik. Random Forest menjadi model terbaik dan dapat digunakan sebagai dasar rekomendasi dalam sistem penanaman hidroponik otomatis di masa depan.
+Evaluasi menunjukkan bahwa Random Forest Classifier lebih unggul dibandingkan Decision Tree dalam menyelesaikan masalah klasifikasi multikelas ini. Metrik evaluasi yang digunakan memberikan gambaran menyeluruh tentang kinerja model dari sisi ketepatan, kelengkapan, dan keseimbangan performa antar kelas. Meskipun hasilnya belum optimal, evaluasi ini menjadi dasar penting untuk proses peningkatan model selanjutnya, seperti melalui tuning hyperparameter atau eksplorasi model lain.
