@@ -142,7 +142,9 @@ Metrik Evaluasi yang Digunakan
 - Recall
 - F1-Score
 - Confusion Matrix
+
 Metrik-metrik ini dipilih karena sangat sesuai untuk kasus klasifikasi multikelas yang balanced (jumlah data antar kelas seimbang). Tidak digunakan metrik seperti ROC-AUC karena kurang relevan untuk klasifikasi multikelas tanpa konversi menjadi binary.
+
 Penjelasan Metrik Evaluasi
 - Accuracy:
   - Proporsi prediksi yang benar dari total jumlah data.Cocok untuk dataset dengan distribusi kelas yang seimbang, seperti pada proyek ini.
@@ -171,7 +173,4 @@ Hasil Evaluasi Model
 | Decision Tree  | 46%     | 49%           | Overfit, kurang generalisasi       |
 | Random Forest  | 56%     | 58%           | Sedikit lebih baik, tapi masih underperform |
 
-
-## Kesimpulan
-
-Evaluasi menunjukkan bahwa Random Forest Classifier lebih unggul dibandingkan Decision Tree dalam menyelesaikan masalah klasifikasi multikelas ini. Metrik evaluasi yang digunakan memberikan gambaran menyeluruh tentang kinerja model dari sisi ketepatan, kelengkapan, dan keseimbangan performa antar kelas. Meskipun hasilnya belum optimal, evaluasi ini menjadi dasar penting untuk proses peningkatan model selanjutnya, seperti melalui tuning hyperparameter atau eksplorasi model lain.
+Metrik-metrik evaluasi menunjukkan bahwa Random Forest Classifier lebih unggul dan dipilih sebagai model terbaik untuk digunakan sebagai solusi dalam sistem rekomendasi jenis tanaman hidroponik. Meskipun hasilnya belum optimal, evaluasi ini menjadi dasar penting untuk proses peningkatan model selanjutnya, seperti melalui tuning hyperparameter atau eksplorasi model lain.
