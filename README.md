@@ -60,7 +60,6 @@ Dilihat dari statistik deskriptif dan asumsi distribusi normal:
 ### Link Dataset
 [Dataset](https://docs.google.com/spreadsheets/d/1AUqeKAaF4xarwE3Zbh5aum3srejIIV5nz_2SEJ8Y0JI/edit?gid=1887223174#gid=1887223174)
 
-## Data Preparation
 ![EDA](eda.png)
 - Distribusi nilai suhu berkisar antara 15 - 30 derajat Celsius
 - Nilai pH air dominan berada di antara 5.5 - 7.0
@@ -82,6 +81,10 @@ Dilihat dari statistik deskriptif dan asumsi distribusi normal:
 - Tidak terdapat missing value (data kosong) di semua kolom.
 - Tidak ditemukan duplikat data.
 
+### outlier
+
+
+## Data Preparation
 * Normalisasi fitur menggunakan StandardScaler
 * Encode label target menggunakan LabelEncoder
 * Split data menjadi train dan test (80:20)
