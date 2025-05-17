@@ -37,6 +37,7 @@ Dataset ini merupakan data sintetis yang dibuat berdasarkan informasi dari jurna
 | 3  | intensitas_cahaya  | 500              | int64     | Intensitas cahaya (dalam satuan lux)        |
 | 4  | jenis_tanaman      | 500              | object    | Jenis tanaman hidroponik (target klasifikasi) |
 
+Dataset ini terdiri dari 500 baris dan 4 kolom, yang mencakup tiga fitur numerik (suhu, pH air, dan intensitas cahaya), serta satu fitur target berupa jenis_tanaman.
 ### Statistik Deskriptif Fitur Numerik
 
 | Statistik | Suhu (°C) | pH Air | Intensitas Cahaya (lux) |
@@ -50,18 +51,37 @@ Dataset ini merupakan data sintetis yang dibuat berdasarkan informasi dari jurna
 | 75%       | 26.04     | 6.48   | 15,512.75                |
 | Max       | 31.64     | 7.18   | 18,469                   |
 
+Dilihat dari statistik deskriptif dan asumsi distribusi normal:
+
+- Suhu berkisar antara 16.06°C hingga 31.64°C dengan rata-rata 23.49°C.
+- Nilai pH berada dalam rentang 5.26 – 7.18, yang masih dalam kisaran umum pH larutan hidroponik (idealnya 5.5 – 6.5).
+- Rentang intensitas Cahaya dari 11.167 lux hingga 18.469 lux.
+
 ### Link Dataset
 [Dataset](https://docs.google.com/spreadsheets/d/1AUqeKAaF4xarwE3Zbh5aum3srejIIV5nz_2SEJ8Y0JI/edit?gid=1887223174#gid=1887223174)
 
 ## Data Preparation
-![Distribusi Jenis tanaman](distribusi-jenis-tanaman.png)
 ![EDA](eda.png)
-* Distribusi nilai suhu berkisar antara 15 - 30 derajat Celsius
-* Nilai pH air dominan berada di antara 5.5 - 7.0
-* Intensitas cahaya bervariasi dari 12.000 - 18.000 Lux
-* Jenis tanaman hidroponik yang digunakan seperti selada, kangkung, bayam, sawi, dan pakcoy
+- Distribusi nilai suhu berkisar antara 15 - 30 derajat Celsius
+- Nilai pH air dominan berada di antara 5.5 - 7.0
+- Intensitas cahaya bervariasi dari 12.000 - 18.000 Lux
+- Jenis tanaman hidroponik yang digunakan seperti selada, kangkung, bayam, sawi, dan pakcoy
 
-* Handling missing value: tidak ada missing value
+![Distribusi Jenis tanaman](distribusi-jenis-tanaman.png)
+- Masing-masing kelas memiliki jumlah data yang sama, yaitu 100 data poin per kelas.
+- Distribusi seimbang (balanced dataset) sangat ideal untuk model klasifikasi
+
+| Kolom              | Jumlah Missing Value |
+|--------------------|----------------------|
+| suhu               | 0                    |
+| ph_air             | 0                    |
+| intensitas_cahaya  | 0                    |
+| jenis_tanaman      | 0                    |
+
+**Jumlah data duplikat:** 0
+- Tidak terdapat missing value (data kosong) di semua kolom.
+- Tidak ditemukan duplikat data.
+
 * Normalisasi fitur menggunakan StandardScaler
 * Encode label target menggunakan LabelEncoder
 * Split data menjadi train dan test (80:20)
