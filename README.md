@@ -30,6 +30,24 @@ Menurut penelitian, penerapan kecerdasan buatan dalam pertanian presisi terbukti
 ### Sumber Data
 Dataset ini merupakan data sintetis yang dibuat berdasarkan informasi dari jurnal dan artikel terkait hidroponik karena belum tersedia dataset publik yang sesuai. Dataset ini dikembangkan dengan bantuan model AI berdasarkan kisaran nilai realistis.
 
+[1] D. E. K. Caniago, E. E. Mubarok, dan Y. C. Pratama, "Monitoring Suhu dan Kelembaban Udara pada Greenhouse Hidroponik Berbasis Internet of Things," Jurnal Elementer, vol. 8, no. 2, pp. 86–94, 2022. [Online]. Tersedia: https://jurnal.pcr.ac.id/index.php/elementer/article/view/5888/2046
+
+[2] A. B. Santoso, T. N. Atmoko, dan S. P. Hapsari, "Prototype Sistem Monitoring Nutrisi dan Tingkat pH Air pada Budidaya Hidroponik Sayur Pakcoy Menggunakan Teknologi Internet of Things (IoT)," ResearchGate, 2023. [Online]. Tersedia: https://www.researchgate.net/publication/374758557
+
+[3] M. Azmy, R. L. Simatupang, dan D. Ginting, "Rancang Bangun Sistem Monitoring Kualitas Air untuk Tanaman Hidroponik Menggunakan NodeMCU," Jurnal Informatika dan Elektronika (JIE), vol. 13, no. 2, pp. 37–43, 2023. [Online]. Tersedia: https://jie.pnp.ac.id/index.php/jie/article/view/336/161
+
+[4] A. M. R. Fathoni, "Rancang Bangun Sistem Monitoring dan Kontrol Otomatis Nutrisi dan pH pada Hidroponik DFT Menggunakan NodeMCU Berbasis IoT," Skripsi, Fakultas Teknik, Universitas Brawijaya, 2022. [Online]. Tersedia: https://repository.ub.ac.id/id/eprint/222392
+
+[5] I. Y. Nugroho, "Perancangan dan Implementasi Sistem Otomatisasi Nutrisi Hidroponik Menggunakan Arduino dan Sensor EC/pH," Tugas Akhir, Institut Teknologi Sepuluh Nopember (ITS), 2022. [Online]. Tersedia: http://repository.its.ac.id/id/eprint/100635
+
+[6] A. S. L. Putri, "Perancangan dan Implementasi Sistem Monitoring dan Kontrol Nutrisi dan pH Air Secara Otomatis pada Budidaya Hidroponik," Skripsi, Universitas Gadjah Mada, 2022. [Online]. Tersedia: https://etd.repository.ugm.ac.id/home/detail_pencarian_downloadfiles/724372
+
+[7] Jencoi, "pH in Hydroponics: How to Maintain the pH Levels of Hydroponic Systems," Jencoi Blog, [Online]. Tersedia: https://blog.jencoi.com/ph-in-hydroponics-how-to-maintain-the-ph-levels-of-hydroponic-systems
+
+[8] HortAmericas, "Monitoring is Crucial for Growing Lettuce and Leafy Greens Year-Round," HortAmericas Blog, [Online]. Tersedia: https://hortamericas.com/blog/news/monitoring-is-crucial-for-growing-lettuce-and-leafy-greens-year-round
+
+[9] IGWorks, "Nutrient and pH Chart for Growing Hydroponic Fruits and Vegetables," IGWorks Blog, [Online]. Tersedia: https://igworks.com/blogs/growing-guides/nutrient-and-ph-chart-for-growing-hydroponic-fruits-and-vegetables
+
 | No | Kolom              | Jumlah Non-Null | Tipe Data | Deskripsi                                   |
 |----|--------------------|------------------|-----------|---------------------------------------------|
 | 1  | suhu               | 500              | float64   | Suhu lingkungan (dalam derajat Celsius)     |
